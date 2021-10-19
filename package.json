@@ -4,10 +4,13 @@
   "description": "typescript express starter using esbuild",
   "main": "index.js",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.1.0",
     "concurrently": "^6.3.0",
     "cross-env": "^7.0.3",
     "eslint": "7",
-    "eslint-config-standard-with-typescript": "^21.0.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.1",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
@@ -22,7 +25,8 @@
     "type:watch": "tsc -noEmit --watch",
     "build": "node esbuild.config.js",
     "build:watch": "cross-env NODE_ENV=development node esbuild.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.*"
   },
   "author": "",
   "license": "ISC",

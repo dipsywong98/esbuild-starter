@@ -1,5 +1,5 @@
 const config = {
-  HELLO_WORLD: 'hello world'
-}
+  HELLO_WORLD: 'hello world',
+};
 
-export default config
+export default config;
