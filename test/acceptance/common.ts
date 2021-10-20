@@ -1,7 +1,7 @@
 import stoppable from 'stoppable';
 import { Server } from 'http';
 import axios from 'axios';
-import app from '../../src/app';
+import app from '../../src/server/app';
 
 let server: Server & stoppable.WithStop;
 const port = 12345;
