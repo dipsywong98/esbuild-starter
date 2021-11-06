@@ -1,2 +1,2 @@
 dist/
-esbuild.config.js
+*.config*.js

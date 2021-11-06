@@ -3,7 +3,7 @@ import config from '../common/config';
 
 const app = express();
 
-app.use('/', express.static('build'));
+app.use('/', express.static('dist/client'));
 app.get('/api/ping', (req, res) => {
   res.send(config.HELLO_WORLD);
 });
