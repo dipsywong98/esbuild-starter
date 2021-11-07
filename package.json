@@ -26,9 +26,9 @@
     "typescript": "^4.4.3"
   },
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "cd dist && node index.js",
     "dev": "cross-env NODE_ENV=development concurrently yarn:dev:* yarn:tsc",
-    "dev:server-nodemon": "nodemon dist/index.js",
+    "dev:server-nodemon": "cd dist && nodemon index.js",
     "dev:server-build": "cross-env NODE_ENV=development node esbuild.config.js",
     "dev:ui": "craco start",
     "dev:tsc": "tsc -noEmit --watch --preserveWatchOutput",
