@@ -33,7 +33,7 @@ jobs:
       if: steps.yarn_cache.outputs.cache-hit != 'true'
     - run: yarn ${{matrix.command}}
     - uses: actions/upload-artifact@v2
-      if: ${{matrix.command}} == 'build'
+      if: matrix.command == 'build'
       with:
         name: dist
         path: dist
