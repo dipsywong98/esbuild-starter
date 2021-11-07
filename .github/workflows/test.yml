@@ -27,7 +27,7 @@ jobs:
     steps:
     - run: yarn build
 
-  test:acceptance:
+  test_acceptance:
     runs-on: ubuntu-latest
     needs: install
 
