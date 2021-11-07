@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ '**' ]
 
-&shared:
+_shared: &shared
   - uses: actions/checkout@v2
   - uses: actions/setup-node@v2
     with:
