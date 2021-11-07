@@ -28,6 +28,5 @@ jobs:
           - build
           - test:acceptance
           - test:lint
-    steps: 
-    *shared
+    steps: *shared
     - run: yarn ${{matrix.command}}
