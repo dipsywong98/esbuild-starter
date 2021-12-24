@@ -11,7 +11,7 @@ function env(key: string, fallback: string | number): string | number {
 }
 
 const config = {
-  HELLO_WORLD: 'hello world',
+  HELLO_WORLD: env('HELLO_WORLD', 'hello world'),
   PORT: env('PORT', 3001),
 };
 
