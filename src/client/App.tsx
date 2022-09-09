@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
-const App = (): JSX.Element => {
+function App(): JSX.Element {
   const [str, setStr] = useState('loading');
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -16,6 +16,6 @@ const App = (): JSX.Element => {
       <button type="button" onClick={() => setCount(count + 1)}>{count}</button>
     </div>
   );
-};
+}
 
 export default App;
