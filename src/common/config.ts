@@ -1,4 +1,4 @@
-import { version } from '../../package.json';
+import { version, name } from '../../package.json';
 
 function env(key: string, fallback: string): string;
 
@@ -13,12 +13,12 @@ function env(key: string, fallback: string | number): string | number {
 }
 
 const config = {
-  APP_NAME: env('APP_NAME', 'esbuild-starter'),
+  APP_NAME: env('APP_NAME', name),
   APP_VERSION: version,
   APP_HASH: process.env.githash ?? 'githash',
   HELLO_WORLD: env('HELLO_WORLD', 'hello world'),
   PORT: env('PORT', 3001),
-  MONGO_URL: env('MONGO_URL', 'mongodb://localhost:27017/database-name'),
+  MONGO_URL: env('MONGO_URL', `mongodb://localhost:27017/${name}`),
 };
 
 export default config;
