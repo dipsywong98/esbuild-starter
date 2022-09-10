@@ -53,7 +53,8 @@
     "test:lint": "eslint .",
     "lint": "yarn test:lint",
     "jest": "jest",
-    "db:createMigration": "migrate-mongo create"
+    "db:createMigration": "migrate-mongo create",
+    "postversion": "git push --follow-tags"
   },
   "author": "",
   "license": "ISC",
