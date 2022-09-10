@@ -1,14 +1,15 @@
 import { database, up } from 'migrate-mongo';
+import logger from '../../logger';
 import './config';
 
 async function migrateUp() {
-  console.log('connecting to MongoDB...');
+  logger.info('connecting to MongoDB...');
   const { db, client } = await database.connect();
-  console.log('migrating up');
+  logger.info('migrating up');
   await up(db, client);
-  console.log('migrated up, closing connection');
+  logger.info('migrated up, closing connection');
   await client.close();
-  console.log('migration done');
+  logger.info('migration done');
 }
 
 export default migrateUp;

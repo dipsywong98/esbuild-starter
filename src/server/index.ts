@@ -1,16 +1,17 @@
 import { connect } from 'mongoose';
 import config from '../common/config';
 import app from './app';
+import logger from './logger';
 import migrateUp from './tasks/migration/up';
 
 const init = async () => {
-  console.log('starting application');
+  logger.info('starting application');
   await migrateUp();
   await connect(config.MONGO_URL);
 
   app.listen(config.PORT, () => {
-    console.log(`Application is listening on port ${config.PORT}`);
+    logger.info(`Application is listening on port ${config.PORT}`);
   });
 };
 
-init().catch(console.error);
+init().catch(logger.error);
