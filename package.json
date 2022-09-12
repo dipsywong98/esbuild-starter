@@ -46,6 +46,7 @@
     "build": "cross-env NODE_ENV=production concurrently yarn:build:*",
     "build:ui": "cross-env BUILD_PATH=dist/client craco build",
     "build:server": "node esbuild.config.js",
+    "postbuild": "cp ecosystem.config.js dist/ecosystem.config.js && cp package.json dist/package.json && cp -r migrations dist/migrations",
     "test": "concurrently test:*",
     "test:acceptance": "jest test/acceptance",
     "test:unit": "jest test/unit",
