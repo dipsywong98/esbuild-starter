@@ -1,3 +1,4 @@
+import './dotenv';
 import { connect } from 'mongoose';
 import config from '../common/config';
 import app from './app';

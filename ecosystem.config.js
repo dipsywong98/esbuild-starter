@@ -20,6 +20,8 @@ module.exports = {
   apps: [{
     name: "esbuild-starter",
     script: "./index.js",
+    watch: ['./index.js', '.env'],
+    ignore_watch: ['logs'],
     env,
     watch: true,
     watch_delay: 1000,
