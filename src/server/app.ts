@@ -1,6 +1,9 @@
 import express from 'express';
+import 'express-async-errors';
 import morgan from 'morgan';
 import config from '../common/config';
+import { sleep } from '../common/utils';
+import { errorHandler, NotFoundError } from './errors';
 import logger from './logger';
 import { Sample } from './models/Sample';
 
@@ -22,18 +25,15 @@ app.get('/api/releaseInfo', (req, res) => {
     hash: config.APP_HASH,
   });
 });
-app.get('/404', (req, res) => {
-  res.status(404).send('not found');
+app.get('/404', async () => {
+  await sleep(10);
+  throw new NotFoundError();
 });
 app.get('/api/sample', async (req, res) => {
   const sample = await Sample.findOne({});
   res.send(sample);
 });
 
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  logger.error(`Error when handling ${req.path} ${err.stack ?? ''}`);
-  res.sendStatus(500);
-  next();
-});
+app.use(errorHandler);
 
 export default app;

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Sample } from '../../src/server/models/Sample';
 import { request } from './common';
 
@@ -13,7 +12,7 @@ describe('app', () => {
   describe('GET /404', () => {
     it('responses with not found', async () => {
       const res = await request.get('/404');
-      expect(res.text).toEqual('not found');
+      expect(res.body).toEqual({ message: 'Not Found' });
       expect(res.statusCode).toEqual(404);
     });
   });
