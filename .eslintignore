@@ -1,2 +1,5 @@
 dist/
 *config*.js
+
+setEnv.js
+migrations/

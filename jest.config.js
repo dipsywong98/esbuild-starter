@@ -19,6 +19,7 @@ const common = {
 module.exports = {
   projects: [{
     ...common,
+    setupFiles: ['./setEnv.js'],
     displayName: 'server',
     testEnvironment: 'node',
     testMatch: ['<rootDir>/test/**/*.test.*'],

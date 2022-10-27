@@ -27,10 +27,9 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react",
-    "react-hooks"
-  ],
-  "rules": {}
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-misused-promises": "off"
+  }
 }

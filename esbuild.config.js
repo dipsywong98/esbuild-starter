@@ -8,7 +8,7 @@ esbuild.build({
   entryPoints: ['./src/server'],
   outfile: './dist/index.js',
   bundle: true,
-  minify: true,
+  minify: false,
   platform: 'node',
   sourcemap: true,
   target: 'node14',

@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import config from '../common/config';
 import logger from './logger';
+import { Sample } from './models/Sample';
 
 const app = express();
 
@@ -20,6 +21,13 @@ app.get('/api/releaseInfo', (req, res) => {
     version: config.APP_VERSION,
     hash: config.APP_HASH,
   });
+});
+app.get('/404', (req, res) => {
+  res.status(404).send('not found');
+});
+app.get('/api/sample', async (req, res) => {
+  const sample = await Sample.findOne({});
+  res.send(sample);
 });
 
 app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
