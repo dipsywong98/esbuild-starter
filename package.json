@@ -1,5 +1,5 @@
 {
-  "name": "ts-express-starter",
+  "name": "esbuild-starter",
   "version": "1.0.8",
   "description": "typescript express starter using esbuild",
   "proxy": "http://localhost:3001",
@@ -39,6 +39,7 @@
   },
   "scripts": {
     "postinstall": "rm -rf node_modules/saslprep",
+    "name": "node name.js",
     "start": "node dist/index.js",
     "dev": "cross-env NODE_ENV=development concurrently yarn:dev:*",
     "dev:server-nodemon": "nodemon --enable-source-maps -r dotenv/config dist/index.js dotenv_config_path=.env.local",
