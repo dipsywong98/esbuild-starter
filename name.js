@@ -30,6 +30,7 @@ const main = async () => {
   fileReplaceName('/readme.md')
   fileReplaceName('/ecosystem.config.js')
   fileReplaceName('/migrate-mongo-config.js')
+  fileReplaceName('/package.json')
 }
 
 main().catch(console.error)
