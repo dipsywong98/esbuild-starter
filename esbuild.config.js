@@ -4,17 +4,29 @@ const githash = require('child_process')
   .execSync('git rev-parse HEAD')
   .toString().trim()
 
-esbuild.build({
-  entryPoints: ['./src/server'],
-  outfile: './dist/index.js',
-  bundle: true,
-  minify: false,
-  platform: 'node',
-  sourcemap: true,
-  target: 'node14',
-  plugins: [],
-  watch: process.env.NODE_ENV === 'development',
-  define: {
-    'process.env.githash': `'${githash}'`
+const main = async () => {
+  const ctx = await esbuild.context({
+    entryPoints: ['./src/server'],
+    outfile: './dist/index.js',
+    bundle: true,
+    minify: false,
+    platform: 'node',
+    sourcemap: true,
+    target: 'node16',
+    plugins: [],
+    define: {
+      'process.env.githash': `'${githash}'`
+    }
+  });
+  if (process.env.NODE_ENV === 'development') {
+    console.log('watching')
+    await ctx.watch()
+  } else {
+    console.log('rebuilding')
+    await ctx.rebuild()
+    await ctx.dispose()
+    console.log('rebuilt')
   }
-});
+}
+
+main()

@@ -1,9 +1,11 @@
 import './dotenv';
-import { connect } from 'mongoose';
+import mongoose, { connect } from 'mongoose';
 import config from '../common/config';
 import app from './app';
 import logger from './logger';
 import migrateUp from './tasks/migration/up';
+
+mongoose.set('strictQuery', true);
 
 const init = async () => {
   logger.info('starting application');

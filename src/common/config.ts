@@ -18,7 +18,7 @@ const config = {
   APP_HASH: process.env.githash ?? 'githash',
   HELLO_WORLD: env('HELLO_WORLD', 'hello world'),
   PORT: env('PORT', 3001),
-  MONGO_URL: env('MONGO_URL', `mongodb://localhost:27017/${name}`),
+  MONGO_URL: env('MONGO_URL', `mongodb://test:testpw@localhost:27017/${name}?authSource=admin`),
 };
 
 export default config;
