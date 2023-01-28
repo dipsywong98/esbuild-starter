@@ -1,6 +1,6 @@
 {
   "name": "esbuild-starter",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "typescript express starter using esbuild",
   "proxy": "http://localhost:3001",
   "main": "index.js",
