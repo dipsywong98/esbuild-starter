@@ -10,7 +10,7 @@ const common = {
       'esbuild-jest',
       {
         sourcemap: true,
-        target: 'node14',
+        target: 'node16',
       },
     ],
   },
