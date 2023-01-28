@@ -1,6 +1,7 @@
 import express from 'express';
 import 'express-async-errors';
 import morgan from 'morgan';
+import path from 'path';
 import config from '../common/config';
 import { sleep } from '../common/utils';
 import { errorHandler, NotFoundError } from './errors';
@@ -9,7 +10,7 @@ import { Sample } from './models/Sample';
 
 const app = express();
 
-app.use('/', express.static('client'));
+app.use('/', express.static(path.join(__dirname, 'client')));
 app.use(morgan('tiny', {
   stream: {
     write: (message) => logger.http(message),

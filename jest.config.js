@@ -1,10 +1,4 @@
 const common = {
-  coverageReporters: [
-    'html',
-    'text',
-    'text-summary',
-    'cobertura',
-  ],
   transform: {
     '.+\\.(j|t)sx?$': [
       'esbuild-jest',
